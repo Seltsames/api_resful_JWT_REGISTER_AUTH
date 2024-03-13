@@ -61,7 +61,7 @@ app.post("/login", (req,res) => {
   if (authenticatedUser(username,password)) {
     let accessToken = jwt.sign({
       data: password
-    }, 'access', { expiresIn: 60 * 60 });
+    }, 'access', { expiresIn: 20});
 
     req.session.authorization = {
       accessToken,username
